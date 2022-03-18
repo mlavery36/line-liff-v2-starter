@@ -1,13 +1,31 @@
 import './index.css';
 import liff from '@line/liff'
 
-document.addEventListener("DOMContentLoaded", function() {
-  liff
-    .init({ liffId: process.env.LIFF_ID })
-    .then(() => {
-        console.log("Success! you can do something with LIFF API here.")
-    })
-    .catch((error) => {
-        console.log(error)
-    })
+document.addEventListener("DOMContentLoaded", function () {
+    liff
+        .init({
+            liffId: '1656979954-woLdEeEa',
+        }) //
+        .then(async () => {
+            const lang = document.getElementById('lang')
+            const getOS = document.getElementById('getOS')
+            const getContext = document.getElementById('getContext')
+            lang.innerHTML = liff.getLanguage()
+            getOS.innerHTML = liff.getOS()
+            console.log(lang)
+            console.log(getOS)
+
+            liff.getProfile()
+                .then((profile) => {
+                    console.log(profile)
+                })
+                .catch((err)=>{
+                    console.log("error", err);
+                })
+
+            // console.log(context)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
 });
