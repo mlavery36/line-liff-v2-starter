@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(lang)
             console.log(getOS)
 
-            liff.getProfile()
+            liff.getProfile() // TODO:NOT WORK
                 .then((profile) => {
                     console.log(profile)
                 })
