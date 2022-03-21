@@ -6,7 +6,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 const env = process.env.NODE_ENV;
-
 const commonConfig = {
   mode: env,
 
@@ -59,7 +58,7 @@ const vanillaConfig = merge(
     name: "vanilla",
     entry: './index.js',
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, '../../../dist'),
       filename: '[name].bundle.js',
       publicPath: '/'
     },
