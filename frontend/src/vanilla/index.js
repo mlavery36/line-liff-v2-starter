@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
             liffId: '1656979954-woLdEeEa',
         }) //
         .then(() => {
-
+            if (!liff.isLoggedIn()) {
+                liff.login()
+            }
             const lang = document.getElementById('lang')
             console.log(lang)
             const getOS = document.getElementById('getOS')
@@ -17,7 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
             getOS.innerHTML = liff.getOS()
             console.log(lang)
             console.log(getOS)
-            liff.login({ redirectUri: 'https://chiderlin-makes-great-sites.netlify.app' })
+
+            const idToken = liff.getIDToken();
+            console.log(idToken);
             // liff.getProfile() // TODO:NOT WORK
             //     .then((profile) => {
             //         console.log(profile)

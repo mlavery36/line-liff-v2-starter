@@ -103,8 +103,9 @@ app.disable('view cache');
 // 掛載APP
 require('./app')(app);
 
-
+const port = process.env.PORT || 80
+const ip = process.env.IP || '127.0.0.1'
 // 啟動server
-server = app.listen(config.PORT, config.IP, () => {
-  console.log('\x1b[37m\x1b[44m%s\x1b[0m', `Listening on ${config.IP}, port ${config.PORT}`);
+server = app.listen(port, ip, () => {
+  console.log('\x1b[37m\x1b[44m%s\x1b[0m', `Listening on ${ip}, port ${port}`);
 });

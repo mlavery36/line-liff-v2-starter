@@ -56,14 +56,19 @@ const vanillaConfig = merge(
   commonConfig,
   {
     name: "vanilla",
-    entry: './index.js',
+    entry: {
+      // TODO:還沒成功
+      pageOne:'./index.js',
+      pageTwo: './test.js'
+    },
     output: {
       path: path.resolve(__dirname, '../../../dist'),
       filename: '[name].bundle.js',
       publicPath: '/'
     },
     plugins: [
-      new HtmlWebpackPlugin({template: './index.html'})
+      new HtmlWebpackPlugin({template: './index.html'}),
+      // new HtmlWebpackPlugin({template: './test.html'})
     ]
   }
 )
